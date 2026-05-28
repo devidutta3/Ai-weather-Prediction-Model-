@@ -109,7 +109,7 @@ https://openweathermap.org/api
 ### Step 1 — Clone Repository
 
 ```bash
-git clone https://github.com/your-username/AI-Weather-Dashboard.git
+git clone https://github.com/devidutta3/Ai-weather-Prediction-Model-.git
 ```
 
 ### Step 2 — Open Project Folder
