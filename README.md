@@ -1,25 +1,22 @@
-# 🌦️ AI Weather Analysis Dashboard
+# 🌦️ AI Weather Prediction Engine
 
-A complete AI + Data Science + Full Stack project that fetches live weather data, analyzes it using Pandas, visualizes trends using charts, predicts future temperature using Machine Learning, and displays everything in a modern dashboard UI.
+This repository contains the backend engine and model training code for an AI weather prediction project. The website/dashboard UI is not developed yet — the focus is on data processing, model training, and backend weather analysis.
 
 ---
 
-## 🚀 Features
+## 🚀 Current Project Scope
 
-- ✅ Live weather data using OpenWeatherMap API
-- ✅ Search weather by city
-- ✅ Data analysis using Pandas
-- ✅ Temperature & humidity charts
-- ✅ Machine learning temperature prediction
-- ✅ FastAPI backend
-- ✅ Responsive frontend dashboard
-- ✅ Deployment ready
+- ✅ Backend weather data engine
+- ✅ Data loading and analysis
+- ✅ Model training and prediction pipeline
+- ✅ Notebook experimentation
+- ⛔ Frontend dashboard / website not developed yet
 
 ---
 
 ## 🛠️ Tech Stack
 
-### Backend
+### Backend / Engine
 
 ```txt
 Python
@@ -32,11 +29,6 @@ Requests
 ```txt
 Pandas
 NumPy
-```
-
-### Data Visualization
-
-```txt
 Matplotlib
 ```
 
@@ -46,12 +38,10 @@ Matplotlib
 Scikit-learn
 ```
 
-### Frontend
+### Notebooks
 
 ```txt
-HTML
-CSS
-JavaScript
+Jupyter / Python scripts for exploration and training
 ```
 
 ---
@@ -59,42 +49,50 @@ JavaScript
 ## 📁 Project Structure
 
 ```bash
-AI-Weather-Dashboard/
-│
+Ai-weather-Prediction-Model-/
 ├── backend/
+│   ├── analyze.py
 │   ├── main.py
-│   ├── weather.py
-│   ├── analysis.py
-│   ├── prediction.py
-│   ├── utils.py
-│
-├── frontend/
-│   ├── index.html
-│   ├── style.css
-│   ├── script.js
-│
-├── data/
-│   ├── weather_data.csv
-│
+│   ├── test.py
+│   └── weather.py
 ├── charts/
-│   ├── temperature_chart.png
-│
-├── model/
-│   ├── weather_model.pkl
-│
-├── requirements.txt
-├── README.md
+│   ├── Temp__Analyze.py
+│   └── Weather_Analyze.py
+├── data/
+│   └── Weather__data__.csv
+├── models/
+├── notebooks/
+│   ├── main.py
+│   ├── train.py
+│   └── Weather__analysis.py
+├── LICENSE
+└── README.md
 ```
+
+---
+
+## 🔍 What This Project Does
+
+- Loads weather data from CSV and live API calls
+- Analyzes temperature and humidity trends
+- Trains machine learning models for temperature prediction
+- Provides a FastAPI backend engine for weather services
+- Includes notebooks for experiment tracking and model training
+
+---
+
+## 🚫 What This Project Does Not Do Yet
+
+- No production-ready frontend website
+- No complete dashboard UI
+- No deployed web app
+- No full end-user interface
 
 ---
 
 ## 🌍 API Used
 
-We are using:
-
-```txt
-OpenWeatherMap API
-```
+This project can use OpenWeatherMap API for weather data.
 
 Get a free API key at:
 
@@ -115,20 +113,13 @@ git clone https://github.com/devidutta3/Ai-weather-Prediction-Model-.git
 ### Step 2 — Open Project Folder
 
 ```bash
-cd AI-Weather-Dashboard
+cd "c:\Users\dasde\OneDrive\Desktop\Ai-weather-Prediction-Model-"
 ```
 
-### Step 3 — Create Virtual Environment
-
-#### Windows
+### Step 3 — Create Virtual Environment (Windows)
 
 ```bash
 python -m venv venv
-```
-
-#### Activate Environment
-
-```bash
 venv\Scripts\activate
 ```
 
@@ -140,7 +131,7 @@ pip install -r requirements.txt
 
 ---
 
-## 📦 Required Libraries
+## 📦 Expected Libraries
 
 ```txt
 pandas
@@ -154,14 +145,14 @@ requests
 
 ---
 
-## ▶️ Run Backend Server
+## ▶️ Run Backend Engine
 
 ```bash
 cd backend
 uvicorn main:app --reload
 ```
 
-Server URL:
+Then open:
 
 ```txt
 http://127.0.0.1:8000
@@ -169,73 +160,24 @@ http://127.0.0.1:8000
 
 ---
 
-## 🌦️ Weather API Example
+## 📌 Licensing
 
-### API Request
+This project is licensed under the Apache License 2.0. Users must comply with the terms of the license when using, modifying, or distributing this code.
 
-```python
-https://api.openweathermap.org/data/2.5/weather?q=Delhi&appid=YOUR_API_KEY
-```
+- Do not remove the `LICENSE` file.
+- Keep the license notice intact in redistributed source code.
+- Give credit to the original developer when sharing or reusing this project.
+- Follow Apache 2.0 requirements for attribution, modifications, and redistribution.
 
-### Example Response
-
-```json
-{
-  "city": "Delhi",
-  "temperature": 32,
-  "humidity": 70,
-  "condition": "Clouds"
-}
-```
+For full terms, see `LICENSE`.
 
 ---
 
-## 📊 Project Modules
+## 🧠 Notes
 
-### 1. Weather API Integration
-
-- Fetch live weather data
-- Search city weather
-- Handle API responses
-
-### 2. Data Analysis
-
-- Store weather data in CSV
-- Analyze temperature trends
-- Humidity analysis
-
-### 3. Data Visualization
-
-- Temperature charts
-- Humidity charts
-- Trend analysis
-
-### 4. Machine Learning
-
-- Train prediction model
-- Predict future temperature
-- Save trained model
-
-### 5. Frontend Dashboard
-
-- Search weather
-- Display charts
-- Responsive UI
-
----
-
-## 🧠 Learning Objectives
-
-This project helps you learn:
-
-- API handling
-- JSON processing
-- Data analysis
-- Data visualization
-- Machine learning workflow
-- Backend API development
-- Frontend integration
-- Real-world project architecture
+- The repository currently implements the backend and model training flow only.
+- Frontend/dashboard development is planned for a later stage.
+- Use the notebooks in `notebooks/` for training and analysis workflows.
 
 ---
 
@@ -258,6 +200,9 @@ Check your OpenWeatherMap API key.
 ### Error: `404 city not found`
 
 Fix:
+
+Verify the city name and spelling in the API request.
+
 
 Check city spelling carefully.
 
