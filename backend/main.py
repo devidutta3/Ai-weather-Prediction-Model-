@@ -1,11 +1,22 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import pickle
 import pandas as pd
+from pathlib import Path
 
 app = FastAPI()
 
-with open("models/weather_model.pkl", "rb") as file:
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+model_path = Path(__file__).resolve().parent.parent / "models" / "weather_model.pkl"
+with open(model_path, "rb") as file:
     model = pickle.load(file)
 
 class WeatherInput(BaseModel):

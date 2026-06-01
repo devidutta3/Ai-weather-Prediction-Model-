@@ -1,13 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ai-Weather-Dashboard</title>
+    <title>AI Weather Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="dash_board_box">
-        
+
+    <nav>
+        <div class="logo">
+            <img src="https://avatars.githubusercontent.com/u/215713594?v=4" alt="Logo">
+        </div>
+
+        <h3>AI Weather Dashboard</h3>
+    </nav>
+
+    <div class="dashboard_box">
+
+        <div class="user_input">
+
+            <h2>Weather Inputs</h2>
+
+            <input type="number" id="humidity" placeholder="Enter Humidity (%)">
+
+            <input type="number" id="wind_speed" placeholder="Enter Wind Speed (km/h)">
+
+            <input type="number" id="soil_temperature" placeholder="Enter Soil Temperature (°C)">
+
+            <button onclick="predictWeather()">
+                Predict Temperature
+            </button>
+
+        </div>
+
+        <div class="result">
+
+            <h2>Prediction Result</h2>
+
+            <div class="temperature_card">
+
+                <p>Predicted Temperature</p>
+
+                <h1 id="prediction">
+                    -- °C
+                </h1>
+
+            </div>
+
+        </div>
+
     </div>
+<script src="script.js"></script>
+
 </body>
+
 </html>
