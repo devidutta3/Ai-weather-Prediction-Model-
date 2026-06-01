@@ -1,19 +1,16 @@
 async function predictWeather() {
 
-    const humidity =
-        parseFloat(
-            document.getElementById("humidity").value
-        );
+    const humidity = parseFloat(
+        document.getElementById("humidity").value
+    );
 
-    const wind_speed =
-        parseFloat(
-            document.getElementById("wind_speed").value
-        );
+    const wind_speed = parseFloat(
+        document.getElementById("wind_speed").value
+    );
 
-    const soil_temperature =
-        parseFloat(
-            document.getElementById("soil_temperature").value
-        );
+    const soil_temperature = parseFloat(
+        document.getElementById("soil_temperature").value
+    );
 
     if (
         isNaN(humidity) ||
@@ -26,34 +23,33 @@ async function predictWeather() {
 
     try {
 
-        const apiBaseUrl = "http://127.0.0.1:8000";
         const response = await fetch(
-            `${apiBaseUrl}/predict`,
+            "https://ai-weather-prediction-model.onrender.com/predict",
             {
                 method: "POST",
-
                 headers: {
                     "Content-Type": "application/json"
                 },
-
                 body: JSON.stringify({
-                    humidity: humidity,
-                    wind_speed: wind_speed,
-                    soil_temperature: soil_temperature
+                    humidity,
+                    wind_speed,
+                    soil_temperature
                 })
             }
         );
 
         if (!response.ok) {
+
             const errorText = await response.text();
-            throw new Error(`Server returned ${response.status}: ${errorText}`);
+
+            throw new Error(
+                `Server returned ${response.status}: ${errorText}`
+            );
         }
 
         const data = await response.json();
 
-        document.getElementById(
-            "prediction"
-        ).innerText =
+        document.getElementById("prediction").innerText =
             data.predicted_temperature.toFixed(2) + " °C";
 
     }
